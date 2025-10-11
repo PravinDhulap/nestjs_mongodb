@@ -18,27 +18,18 @@ export class PostsService {
      */
     @InjectModel(Post.name)
     private readonly postModel: Model<Post>,
-  ) {}
+  ) { }
 
-  public async createPost(createPostDto: CreatePostDto){
+  public async createPost(createPostDto: CreatePostDto) {
     const newPost = new this.postModel(createPostDto);
     return await newPost.save();
   }
 
-  public findAll(userId: string) {
-    const user = this.usersService.findOneById(userId);
-
-    return [
-      {
-        user: user,
-        title: 'Test Tile',
-        content: 'Test Content',
-      },
-      {
-        user: user,
-        title: 'Test Tile 2',
-        content: 'Test Content 2',
-      },
-    ];
+  public async findAll() {
+    return await this.postModel
+    .find()
+    .populate('tags')
+    .populate('author')
+    .exec();
   }
 }
