@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PostsModule } from './posts/posts.module';
 import { UsersModule } from './users/users.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { UsersModule } from './users/users.module';
       // 'mongodb+srv://pravin:<db_password>@nestjs.zsl13da.mongodb.net/',
       { dbName: 'nestjs' },
     ),
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
