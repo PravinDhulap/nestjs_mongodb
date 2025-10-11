@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
     AuthModule,
     MongooseModule.forRoot(
       'mongodb+srv://pravin:Mongodb%401989@nestjs.zsl13da.mongodb.net/?retryWrites=true&w=majority&appName=nestjs',
+      // 'mongodb+srv://pravin:<db_password>@nestjs.zsl13da.mongodb.net/',
       { dbName: 'nestjs' },
     ),
   ],

@@ -12,7 +12,7 @@ export class PostsController {
      *  Injecting Posts Service
      */
     private readonly postsService: PostsService,
-  ) {}
+  ) { }
 
   /*
    * GET localhost:3000/posts/:userId
@@ -33,6 +33,7 @@ export class PostsController {
   @Post()
   public createPost(@Body() createPostDto: CreatePostDto) {
     console.log(createPostDto);
+    return this.postsService.createPost(createPostDto);
   }
 
   @ApiOperation({

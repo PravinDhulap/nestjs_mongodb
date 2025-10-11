@@ -5,6 +5,7 @@ import {
   IsEnum,
   IsISO8601,
   IsJSON,
+  isNotEmpty,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -70,5 +71,10 @@ export class CreatePostDto {
   @IsISO8601()
   @IsOptional()
   publishOn?: Date;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  author: string;
 
 }
