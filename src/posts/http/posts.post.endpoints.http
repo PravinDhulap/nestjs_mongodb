@@ -2,14 +2,14 @@ POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-  "title": "Nest JS Learning",
+  "title": "Nest - React JS Learning",
   "postType": "post",
-  "slug": "new-with-nest-js",
+  "slug": "new-with-nest-js1",
   "status": "draft",
   "content": "post-content",
   // "schema": "{\r\n    \"@context\": \"https:\/\/schema.org\",\r\n    \"@type\": \"Person\"\r\n  }",
   "featuredImageUrl": "http://localhost.com/images/image1.jpg",
-  "publishOn": "2024-03-16T07:46:32+0000",
+  "publishOn": "2025-10-23T07:46:32+0000",
   "author": "68e3e1a51ae9355d3416b75c",
   "tags" : ["68e9bb6dd63426c57d1878da","68e9bbbad63426c57d1878de"]
   // "tags": [

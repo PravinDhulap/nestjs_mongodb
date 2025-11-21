@@ -28,7 +28,8 @@ export class UsersService {
       throw new BadRequestException('Error creating the user');
     }
     finally {
-      if (!newUser) {
+      if (newUser) {
+        console.error('User creation successful:', newUser);
         return await newUser.save();
       }
     }
@@ -39,21 +40,25 @@ export class UsersService {
   /**
    * The method to get all the users from the database
    */
-  public findAll(
+  public async findAll(
     getUserParamDto: GetUsersParamDto,
     limt: number,
     page: number,
   ) {
-    return [
-      {
-        firstName: 'John',
-        email: 'john@doe.com',
-      },
-      {
-        firstName: 'Alice',
-        email: 'alice@doe.com',
-      },
-    ];
+    console.log(getUserParamDto, limt, page);
+
+    return await this.userModel.find();
+
+    // return [
+    //   {
+    //     firstName: 'John',
+    //     email: 'john@doe.com',
+    //   },
+    //   {
+    //     firstName: 'Alice',
+    //     email: 'alice@doe.com',
+    //   },
+    // ];
   }
   /**
    * Find a single user using the ID of the user
